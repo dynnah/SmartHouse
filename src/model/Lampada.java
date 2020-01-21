@@ -3,7 +3,7 @@ package model;
 public abstract class Lampada {
 	private boolean ativo = false;
 	private String luminancia;
-	private Cenario cenario;
+	private Comodo comodo;
 	
 	public Lampada(){}
 
@@ -23,12 +23,12 @@ public abstract class Lampada {
 		this.luminancia = luminancia;
 	}
 	
-	public Cenario getCenario() {
-		return cenario;
+	public Comodo getComodo() {
+		return comodo;
 	}
 
-	public void setCenario(Cenario cenario) {
-		this.cenario = cenario;
+	public void setComodo(Comodo comodo) {
+		this.comodo = comodo;
 	}
 
 	public void ligar() {
@@ -37,6 +37,11 @@ public abstract class Lampada {
 	
 	public void desligar() {
 		this.ativo = false;
+	}
+
+	@Override
+	public String toString() {
+		return "Lampada [ativo=" + ativo + ", luminancia=" + luminancia + ", comodo=" + comodo + "]";
 	}
 	
 }

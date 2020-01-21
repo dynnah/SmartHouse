@@ -12,32 +12,19 @@ import java.util.List;
 
 public class Cenario {
 	
-	 private List<Cenario> cenarios = new ArrayList<Cenario>();
-	 private List<Lampada> lampadas = new ArrayList<Lampada>();
+	 private List<Comodo> comodos= new ArrayList<Comodo>();
 	 private String nome;
 	 
 	 public Cenario(String nome) {
 		 this.nome = nome;
 	 }
 	 
-	 public void adicionarLampada(Lampada l){
-			lampadas.add(l);
-			l.setCenario(this);
-	 }
-	 
-	 public void removerLampada(Lampada l){
-			lampadas.remove(l);
-			l.setCenario(null);
-	} 
-	 
-	 public void adicionarCenario(Cenario c){
-			cenarios.add(c);
-			c.adicionarCenario(this);
+	 public void adicionarComodo(Comodo c){
+			comodos.add(c);
 	 } 
 	 
-	 public void removerCenario(Cenario c){
-			cenarios.remove(c);
-			c.removerCenario(this);
+	 public void removerComodo(Comodo c){
+			comodos.remove(c);
 	 }
 	 
 	public String getNome() {
@@ -47,10 +34,18 @@ public class Cenario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public List<Comodo> getComodos() {
+		return comodos;
+	}
+
+	public void setComodos(List<Comodo> comodos) {
+		this.comodos = comodos;
+	}
 
 	@Override
 	public String toString() {
-		return "Cenario [cenarios=" + cenarios + ", lampadas=" + lampadas + ", nome=" + nome + "]";
+		return "Cenario: " + this.getNome() + "[comodos=" + comodos + "]";
 	} 
 	 
 }
