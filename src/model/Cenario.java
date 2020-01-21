@@ -14,9 +14,11 @@ public class Cenario {
 	
 	 private List<Comodo> comodos= new ArrayList<Comodo>();
 	 private String nome;
+	 private boolean ativo;
 	 
 	 public Cenario(String nome) {
 		 this.nome = nome;
+		 this.ativo = false;
 	 }
 	 
 	 public void adicionarComodo(Comodo c){
@@ -41,6 +43,14 @@ public class Cenario {
 
 	public void setComodos(List<Comodo> comodos) {
 		this.comodos = comodos;
+	}
+	
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	@Override

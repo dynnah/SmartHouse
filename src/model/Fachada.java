@@ -58,10 +58,35 @@ public class Fachada {
 				l.desligar();
 		}
 	}
-
+	
+	
+	public static void inserirComodosCenario(String comodo, String cenario) throws Exception{
+		Cenario ce = casa.localizarCenario(cenario);
+		if (ce == null)
+			throw new Exception("Cenario Inexistente!");
+		
+		Comodo co = casa.localizarComodo(comodo);
+		if (co == null)
+			throw new Exception("Comodo Inexistente!");
+		
+		ce.adicionarComodo(co);
+		
+	}
+	
+	public static String statusCenario(String nome) throws Exception{
+		Cenario c = casa.localizarCenario(nome);
+		if (c == null)
+			throw new Exception("Cenario Inexistente!");
+		
+		if(c.isAtivo())
+			return "Cenario" + nome + "esta ativado.";
+		else
+			return "Cenario" + nome + "esta desativado.";
+					
+	}
 
 	public static void criarComodos() {
-		List<String> nomes = Arrays.asList("Sala", "Cozinha", "Quarto", "Terraço");
+		List<String> nomes = Arrays.asList("Sala", "Cozinha", "Quarto", "Terraco", "Banheiro");
 		
 		for(String nome : nomes) {
 			Comodo c = new Comodo(nome);
@@ -101,5 +126,14 @@ public class Fachada {
 	public static ArrayList<Comodo> listarComodos() {
 		return casa.getComodos();
 	}
+	
+	public static Cenario localizarCenario(String nome){
+		for(Cenario c : casa.getCenarios()){
+			if(c.getNome().equals(nome))
+				return c;
+		}
+		return null;
+	}
+	
 	
 }

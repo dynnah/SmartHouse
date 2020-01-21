@@ -13,6 +13,8 @@ public class Teste {
 		try {	
 			Fachada.criarComodos();
 			texto = Fachada.criarCenario("Festa");
+			Fachada.inserirComodosCenario("Sala", "Festa");
+			Fachada.inserirComodosCenario("Terraco", "Festa");
 			
 			for(Cenario c : Fachada.listarCenarios()) {
 				System.out.println(c.getNome());
@@ -22,6 +24,10 @@ public class Teste {
 				System.out.println(co.getNome());
 			}
 			
+			for(Comodo comodo : Fachada.localizarCenario("Festa").getComodos())
+				System.out.println(comodo);
+				
+				
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
