@@ -9,12 +9,11 @@ import model.Lampada;
 
 public class Casa {
 
-	private List<Lampada> lampadas = new ArrayList<Lampada>();
-	private List<Cenario> cenarios = new ArrayList<Cenario>();
-	private List<Comodo> comodos = new ArrayList<Comodo>();
+	private ArrayList<Lampada> lampadas = new ArrayList<Lampada>();
+	private ArrayList<Cenario> cenarios = new ArrayList<Cenario>();
+	private ArrayList<Comodo> comodos = new ArrayList<Comodo>();
 	
 	public Casa(){}
-	
 	
 	public void adicionarLampada(Lampada lampada) {
 		lampadas.add(lampada);
@@ -55,5 +54,29 @@ public class Casa {
 		}
 		return null;
 	}
-	
+
+	public ArrayList<Lampada> getLampadas() {
+		return lampadas;
+	}
+
+	public void setLampadas(ArrayList<Lampada> lampadas) {
+		this.lampadas = lampadas;
+	}
+
+	public ArrayList<Cenario> getCenarios() {
+		return cenarios;
+	}
+
+	public void setCenarios(ArrayList<Cenario> cenarios) {
+		this.cenarios = cenarios;
+	}
+
+	public ArrayList<Comodo> getComodos() {
+		return comodos;
+	}
+
+	public void setComodos(ArrayList<Comodo> comodos) {
+		this.comodos = comodos;
+	}
+
 }

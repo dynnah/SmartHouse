@@ -42,5 +42,12 @@ public class Comodo {
 	public void setLampadas(List<Lampada> lampadas) {
 		this.lampadas = lampadas;
 	}
+
+	@Override
+	public String toString() {
+		return "Comodo [nome=" + nome + ", lampadas=" + lampadas + "]";
+	}
+	
+	
 	
 }
