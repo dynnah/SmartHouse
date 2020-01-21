@@ -1,5 +1,8 @@
 package model;
 
+import factory.Lampada;
+import factory.LampadaFactory;
+
 public interface Fachada {
 	
 	public Cenario criarCenario();

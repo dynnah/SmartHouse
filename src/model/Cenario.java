@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 - cenarios: List
 - dispositivos: List<Lampada>
@@ -8,5 +11,9 @@ package model;
  */
 
 public class Cenario {
-
+	
+	 List<Cenario> cenarios= new ArrayList<Cenario>();
+      
+     Cenario cenario = new Cenario();
+      
 }
