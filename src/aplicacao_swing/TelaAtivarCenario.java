@@ -65,7 +65,10 @@ public class TelaAtivarCenario extends JFrame {
 		lblNome = new JLabel("Nome");
 		lblNome.setBounds(10, 14, 46, 14);
 		contentPane.add(lblNome);
-
+		
+		lblmsg = new JLabel("");
+		lblmsg.setBounds(12, 240, 273, 14);
+		contentPane.add(lblmsg);
 
 		button1 = new JButton("Ativar");
 		button1.addActionListener(new ActionListener() {
@@ -78,6 +81,7 @@ public class TelaAtivarCenario extends JFrame {
 						Cenario c = Fachada.localizarCenario(nome);
 						Fachada.ativarCenario(c.getNome());
 						lblmsg.setText("Cenario " + nome + " ativado.");
+						
 					}
 						
 				}

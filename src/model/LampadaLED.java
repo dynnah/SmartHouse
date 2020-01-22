@@ -14,6 +14,11 @@ public class LampadaLED extends Lampada {
 	public void setCor(String cor) {
 		this.cor = cor;
 	}
+
+	@Override
+	public String toString() {
+		return "LampadaLED [cor=" + cor + "    ativo: " + super.isAtivo() + "]";
+	}
 	
 	
 }

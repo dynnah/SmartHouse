@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Fachada {
 
-	private LampadaFactory fabrica = new LampadaFactory();
+	private static LampadaFactory fabrica = new LampadaFactory();
 	private static Casa casa = new Casa();
 
 	public static Cenario criarCenario(String nome) throws Exception{
@@ -91,6 +91,12 @@ public class Fachada {
 		for(String nome : nomes) {
 			Comodo c = new Comodo(nome);
 			casa.adicionarComodo(c);
+			Lampada led = fabrica.criarLampadaLED("azul");
+			Lampada li = fabrica.criarLampadaIncandescente();
+			c.adicionarLampada(led);
+			led.setComodo(c);
+			c.adicionarLampada(li);
+			li.setComodo(c);
 		}
 	}
 	
@@ -105,10 +111,6 @@ public class Fachada {
 	}
 	
 	
-	public static void adicionarLampadaComodo() {
-		
-	}
-
 	public static void ligarLampada(String nome) throws Exception{
 		//buscar comodo e ligar a lampada
 		Comodo c = casa.localizarComodo(nome);
