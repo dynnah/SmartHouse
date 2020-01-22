@@ -94,6 +94,17 @@ public class Fachada {
 		}
 	}
 	
+	public static String excluirComodo(String nome) throws Exception{
+		Comodo c = casa.localizarComodo(nome);
+		if (c == null)
+			throw new Exception("Comodo Inexistente!");
+
+		casa.removerComodo(c);
+
+		return "Cenario " + nome + " excluido.";
+	}
+	
+	
 	public static void adicionarLampadaComodo() {
 		
 	}
